@@ -1,0 +1,23 @@
+version: '3'
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: homeassistant/home-assistant:stable
+    depends_on:
+      - mosquitto
+    volumes:
+      - /home/YOUR_USER_NAME/repos/Binha/ha/config:/config
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - TZ=Asia/Jerusalem
+    restart: unless-stopped
+    network_mode: host
+
+  mosquitto:
+    image: eclipse-mosquitto
+    hostname: mosquitto
+    container_name: mosquitto
+    volumes:
+      - /home/YOUR_USER_NAME/repos/Binha/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    restart: unless-stopped
+    network_mode: host

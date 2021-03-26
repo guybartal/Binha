@@ -127,3 +127,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+#models folder
+models
+
+#home assistant folder
+ha
+
+#MQTT broker
+mosquitto
+
+#output folder will contain captured frames
+output

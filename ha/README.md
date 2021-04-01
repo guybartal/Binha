@@ -89,6 +89,7 @@ Now that we have both Home Assistant and an MQTT broker running, we need to conf
 4. Unser the "Listen to a topic", type "classifier" in the "topic to subscribe to" and "start listening"
 5. In terminal, navigate to the [ha](ha/) directory in this repo
 6. Run the `test_mqtt.py` file:
+
     ```
     python3 test_mqtt.py
     ```

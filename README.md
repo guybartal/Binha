@@ -115,7 +115,7 @@ There are remote brokers (for a fee) but we will use a local broker called [Mosq
     ~/docker/mosquitto
     ```
 
-2. Set the paths inside docker-compose.yml, change "YOUR_USERNAME" to match your Jetson username, for example: "/home/docker/ha/config:/config" (execute `who` to get the user name)
+2. Set the paths inside `docker-compose.yml`, change "YOUR_USERNAME" to match your Jetson username, for example: "/home/docker/ha/config:/config" (execute `who` to get the user name)
 3. [optional] Set the "Asia/Jerusalem" to your timezone
 4. Start the containers by executing the following while pointing at the repo root
     ```

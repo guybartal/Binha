@@ -85,5 +85,6 @@ The next step would be creating an automation that will be triggered by an MQTT 
 11. Run it, `python3 test_mqtt.py`
 12. The Shelly button should now be switched on
 
-Try creating a similar automation for turnning it off.
+Try creating a similar automation for turnning it off.  
+
 **Note**: The MQTT messages from the classifier might be sent out in high rate, make sure to aggregate the events or delay the Shelly operation so it won't execute too many times in a second.

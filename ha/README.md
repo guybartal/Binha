@@ -1,29 +1,3 @@
-### Install Docker compose
-1. Install cURL:
-   ```
-   sudo apt update
-   sudo apt upgrade
-   sudo apt install curl
-   ```
-2. Download `docker-compose`:
-   ```
-   sudo curl -L --fail https://raw.githubusercontent.com/linuxserver/docker-docker-compose/master/run.sh -o /usr/local/bin/docker-compose
-   ```
-3. Set it with execute permissions:
-   ```
-   sudo chmod +x /usr/local/bin/docker-compose
-   ```
-4. Verify it's installed property:
-   ```
-   sudo /usr/local/bin/docker-compose --version
-   ```
-   It should first install the image, then you should get something like:
-   ```
-   docker-compose version 1.28.0, build d02a7b1a
-   ```
-   
-   See original thread [here](https://github.com/docker/compose/issues/6831)
-
 ### Install Home Assistant and MQTT broker
 Home Assistant is an OSS solution for home automation, it supports many types of devices and services,
 

@@ -53,6 +53,7 @@ To update the image to the latest, run:
 8. MQTT is now set and Home Assistant can subscribe to topics
 
 ## Configure Shelly button in Home Assistant
+See [HA documentation](https://www.home-assistant.io/integrations/shelly/)
 1. Open Home Asisstant in your browser ([http://localhost:8123](http://localhost:8123))
 2. On the left menu, navigate to "Configuration", and then "Integrations"
 3. On the right bottom, click "Add integration" and type in "Shelly", select the Shelly option

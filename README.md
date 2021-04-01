@@ -111,13 +111,13 @@ MQTT requires a broker which receives the messages and transports them to the su
 There are remote brokers (for a fee) but we will use a local broker called [Mosquitto](https://mosquitto.org/).
 1. Create the following path:
     ```
-    ~/repos/Binha/ha/config
-    ~/repos/Binha/mosquitto
+    ~/docker/ha/config
+    ~/docker/mosquitto
     ```
 
-2. Set the paths inside docker-compose.yml, change "YOUR_USERNAME" to match your Jetson username, for example: "/home/guy/repos/Binha/ha/config:/config"
-3. Set the "Asia/Jerusalem" to your timezone.
-4. Start the containers
+2. Set the paths inside docker-compose.yml, change "YOUR_USERNAME" to match your Jetson username, for example: "/home/docker/ha/config:/config" (execute `who` to get the user name)
+3. [optional] Set the "Asia/Jerusalem" to your timezone
+4. Start the containers by executing the following while pointing at the repo root
     ```
     docker-compose up -d
     ```

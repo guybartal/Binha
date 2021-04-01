@@ -17,6 +17,11 @@ There are remote brokers (for a fee) but we will use a local broker called [Mosq
     ```
     docker-compose up -d
     ```
+5. Home Assistant should now be running, navigate to `http://localhost:8123`
+See original instructions [here](https://www.home-assistant.io/docs/installation/docker/#docker-compose)
+6. The MQTT broker is now running locally on port 1883
+
+If needed, here are a few helpful docker-compose commands:
 
     To restart the container run:
     ```
@@ -28,10 +33,6 @@ There are remote brokers (for a fee) but we will use a local broker called [Mosq
     docker-compose pull
     docker-compose up -d --build homeassistant
     ```
-5. Home Assistant should now be running, navigate to `http://localhost:8123`
-See original instructions [here](https://www.home-assistant.io/docs/installation/docker/#docker-compose)
-6. The MQTT broker is now running locally on port 1883
-
 ### Subscribe Home Assistant to the MQTT broker
 Now that we have both Home Assistant and an MQTT broker running, we need to configure HA to listen (subscribe) to the broker messages
 1. Go to the Home Assistant configuration directory:

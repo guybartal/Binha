@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "classifer",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/jetson/classifier.py",
+            "args": [
+                "--model_dir", "${workspaceFolder}/jetson/models/hand_tf/",
+                "--output_dir", "${workspaceFolder}/jetson/models/hand_tf/output/"
+            ]
+        }
+    ]
+} 

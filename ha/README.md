@@ -1,4 +1,4 @@
-### Install Home Assistant and MQTT broker
+# Install Home Assistant and MQTT broker
 Home Assistant is an OSS solution for home automation, it supports many types of devices and services,
 
 to send messages to Home Assistant from our AI model we use MQTT protocol,
@@ -35,7 +35,7 @@ To update the image to the latest, run:
 ### Set Home Assistant to listen to MQTT messages
 1. Open Home Asisstant in your browser ([http://localhost:8123](http://localhost:8123))
 2. On the left menu, navigate to "Configuration", and then "Integrations"
-3. On the right bottom, click "Add integration" type "MQTT" in the search box and select the shown option
+3. On the right bottom, click "Add integration" type in "MQTT" in the search box and select the shown option
 4. For "broker" type `localhost` and for "port" leave it as `1883`, click "Submit"
 
 #### Test Home Assistant with MQTT
@@ -51,3 +51,12 @@ To update the image to the latest, run:
     ```
 7. Go back to Home Assistant, veryify you see "Message 0 received" and below: `Hello MQTT`
 8. MQTT is now set and Home Assistant can subscribe to topics
+
+## Configure Shelly button in Home Assistant
+1. Open Home Asisstant in your browser ([http://localhost:8123](http://localhost:8123))
+2. On the left menu, navigate to "Configuration", and then "Integrations"
+3. On the right bottom, click "Add integration" and type in "Shelly", select the Shelly option
+4. For localhost, type in the Shelly local ip and click "Submit"
+5.   If you are not sure what the IP is, open the Shelly app, select the device and click on "Settings"
+6.   Scroll down to "Device information" and expand it, the IP is listed under "Device IP"
+7. The device is now read to be use in HA, you can test it by navigating to the ["Overview" page](http://localhost:8123/lovelace/default_view) and you should see the Shelly switch.

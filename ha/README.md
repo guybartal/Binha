@@ -58,6 +58,29 @@ See [HA documentation](https://www.home-assistant.io/integrations/shelly/)
 2. On the left menu, navigate to "Configuration", and then "Integrations"
 3. On the right bottom, click "Add integration" and type in "Shelly", select the Shelly option
 4. For localhost, type in the Shelly local ip and click "Submit"
-5.   If you are not sure what the IP is, open the Shelly app, select the device and click on "Settings"
-6.   Scroll down to "Device information" and expand it, the IP is listed under "Device IP"
+    1. If you are not sure what the IP is, open the Shelly app, select the device and click on "Settings"
+    2. Scroll down to "Device information" and expand it, the IP is listed under "Device IP"
 7. The device is now read to be use in HA, you can test it by navigating to the ["Overview" page](http://localhost:8123/lovelace/default_view) and you should see the Shelly switch.
+
+## Creating an Home Assistant automation
+The next step would be creating an automation that will be triggered by an MQTT message.
+1. Browse to your Home Assistant instance
+2. In the sidebar click on "Configuration" and select "Automations"
+3. Click on the "Add automation" button on the bottom right corner
+4. Select "Start with an empty automation"
+6. Configure the automation
+    1. For the "Name", type in something like "Control Shelly by MQTT"
+    2. Trigger
+        1. For "trigger type" select "MQTT"
+        2. For "topic" type in "classifier"
+        3.  For "payload" type in "1"
+    3. Action
+        1. For "action type" select "Device"
+        2. For "device" select the Shelly device from the list
+        3. For "Action" select "Turn on <shelly device name>"
+7. Click the "Save" button
+8. Back in the terminal, navigate to the [ha/](ha/) dir in this repo
+9. Edit the `test_mqtt.py` and replace the `Hello MQTT` with `1`
+10. Save and close the file
+11. Run it, `python3 test_mqtt.py`
+12. The Shelly button should now be switched on

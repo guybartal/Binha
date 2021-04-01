@@ -103,55 +103,7 @@ mkdir /data/output
 ```
 
 ### Install Home Assistant and MQTT broker
-Home Assistant is an OSS solution for home automation, it supports many types of devices and services,
-
-to send messages to Home Assistant from our AI model we use MQTT protocol,
-
-MQTT requires a broker which receives the messages and transports them to the subscribers
-There are remote brokers (for a fee) but we will use a local broker called [Mosquitto](https://mosquitto.org/).
-1. Create the following path:
-    ```
-    ~/docker/ha/config
-    ~/docker/mosquitto
-    ```
-
-2. Set the paths inside `docker-compose.yml`, change "YOUR_USERNAME" to match your Jetson username, for example: "/home/docker/ha/config:/config" (execute `who` to get the user name)
-3. [optional] Set the "Asia/Jerusalem" to your timezone
-4. Start the containers by executing the following while pointing at the repo root
-    ```
-    docker-compose up -d
-    ```
-
-    To restart the container run:
-    ```
-    docker-compose restart
-    ```
-
-    To update the image to the latest, run:
-    ```
-    docker-compose pull
-    docker-compose up -d --build homeassistant
-    ```
-5. Home Assistant should now be running, navigate to `http://localhost:8123`
-See original instructions [here](https://www.home-assistant.io/docs/installation/docker/#docker-compose)
-6. The MQTT broker is now running locally on port 1883
-
-### Subscribe Home Assistant to the MQTT broker
-Now that we have both Home Assistant and an MQTT broker running, we need to configure HA to listen (subscribe) to the broker messages
-1. Go to the Home Assistant configuration directory:
-   ```
-   cd ~/repos/Binha/ha/config/
-   ```
-2. Edit the `configuration.yaml` file and add the following
-   ```
-   mqtt:
-     broker: localhost
-   ```
-   Since this is a `yaml` file, the indentation set the scope, make sure not to indent it wrongly
-3. Restart Home Assistant:
-   ```
-   sudo docker-compose restart
-   ```
+Go to [ha/README.md](ha/README.md)
 
 ### Train your own image classifier with Lobe
 
